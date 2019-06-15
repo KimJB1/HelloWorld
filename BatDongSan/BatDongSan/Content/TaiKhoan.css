@@ -1,0 +1,22 @@
+﻿
+h2 {
+    color: green;
+    font-weight: bold;
+}
+.btn-default {
+    color: white;
+    background-color: green;
+}
+.btn-default:hover{
+    color:red;
+    background-color:#37cc13;
+}
+.image{
+    width:150px;
+    height:150px;
+}
+.table-bordered {
+    border: 1px solid red;
+    width:100%;
+    text-align:center;
+}

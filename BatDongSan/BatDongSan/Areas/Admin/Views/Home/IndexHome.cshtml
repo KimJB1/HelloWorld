@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "IndexHome";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1 style="margin-left:2%;">Nguồn doanh thu</h1>
+
+<div id="piechart"></div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script type="text/javascript">
+// Tải biểu đồ google
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+// Vẽ biểu đồ và thiết lập các giá trị biểu đồ
+function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+        ['Sản phẩm', 'Số lượng bán'],
+        ['Biệt thự', 1],
+        ['Biệt thự nghỉ dưỡng', 2],
+        ['Biệt thự trên không', 4],
+        ['Căn hộ', 2],
+        ['Căn hộ dịch vụ', 8],
+        ['Căn hộ khách sạn', 9]
+    ]);
+    
+  // Không bắt buộc; thêm một tiêu đề và thiết lập chiều rộng và chiều cao của biểu đồ
+  var options = {'title':'Trung bình tháng', 'width':720, 'height':400};
+
+  // Hiển thị biểu đồ bên trong phần tử <div> với id = "piechart"
+  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+  chart.draw(data, options);
+}
+</script>
+

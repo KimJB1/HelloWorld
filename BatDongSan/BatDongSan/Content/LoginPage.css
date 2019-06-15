@@ -1,0 +1,67 @@
+*{
+	margin:0;
+	padding: 0;
+}
+
+::-webkit-input-placeholder {
+  color: gray;
+  font-size: 10px;
+}
+::-moz-placeholder {
+  color: gray;
+  font-size: 10px;
+}
+:-ms-input-placeholder {
+  color: gray;
+  font-size: 10px;
+}
+::placeholder {
+  color: gray;
+  font-size: 10px;
+}
+
+.loginmain{
+	margin:0 auto;
+	width: 35%;
+    height: 440px;
+	margin-top: 3%;
+	text-align: center;
+	background-color: white;
+	box-shadow: 2px 2px 10px gray, 2px -2px 10px gray, -2px 2px gray, -2px -2px gray;
+}
+h3{
+	padding-top: 5%;
+	color: red;
+	font-weight: bold;
+}
+h3:hover{
+	color: green;
+}
+.imgs{
+	margin-top: 10%;
+}
+.imgs i{
+	font-size: 800%;
+	text-align: center;
+	color: blue;
+}
+.loginbot{
+	margin-top: 5%;
+}
+input{
+	width: 60%;
+	text-align: left !important;
+	font-size: 100%;
+	padding-left: 2%;
+	margin-top: 2%;
+}
+.loginfooter input{
+	margin-top: 2%;
+	text-align: center !important;
+	width: 30%;
+	float: right;
+	margin-right: 20%;
+}
+body{
+	background-color: #dad6d6;
+}

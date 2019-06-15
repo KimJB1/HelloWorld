@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RealEstateModelStoreContainer" CdmEntityContainer="RealEstateEntities">
+    <EntitySetMapping Name="tbl_Account">
+      <EntityTypeMapping TypeName="RealEstateModel.tbl_Account">
+        <MappingFragment StoreEntitySet="tbl_Account">
+          <ScalarProperty Name="ID_Account" ColumnName="ID_Account" />
+          <ScalarProperty Name="Account_Name" ColumnName="Account_Name" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="ID_Position" ColumnName="ID_Position" />
+          <ScalarProperty Name="Account" ColumnName="Account" />
+          <ScalarProperty Name="Pass" ColumnName="Pass" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Avarta" ColumnName="Avarta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_CategoryOfFurniture">
+      <EntityTypeMapping TypeName="RealEstateModel.tbl_CategoryOfFurniture">
+        <MappingFragment StoreEntitySet="tbl_CategoryOfFurniture">
+          <ScalarProperty Name="ID_CategoryOfFurniture" ColumnName="ID_CategoryOfFurniture" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_CategoryOfImagesRental">
+      <EntityTypeMapping TypeName="RealEstateModel.tbl_CategoryOfImagesRental">
+        <MappingFragment StoreEntitySet="tbl_CategoryOfImagesRental">
+          <ScalarProperty Name="ID_CategoryOfImageRental" ColumnName="ID_CategoryOfImageRental" />
+          <ScalarProperty Name="ID_RealEstateRental" ColumnName="ID_RealEstateRental" />
+          <ScalarProperty Name="ID_Images" ColumnName="ID_Images" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_CategoryOfRoom">
+      <EntityTypeMapping TypeName="RealEstateModel.tbl_CategoryOfRoom">
+        <MappingFragment StoreEntitySet="tbl_CategoryOfRoom">
+          <ScalarProperty Name="ID_CategoryOfRoom" ColumnName="ID_CategoryOfRoom" />
+          <ScalarProperty Name="CategoryOfRoomName" ColumnName="CategoryOfRoomName" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_CategoryOfSellImages">
+      <EntityTypeMapping TypeName="RealEstateModel.tbl_CategoryOfSellImages">
+        <MappingFragment StoreEntitySet="tbl_CategoryOfSellImages">
+          <ScalarProperty Name="ID_CategoryOfSellImages" ColumnName="ID_CategoryOfSellImages" />
+          <ScalarProperty Name="ID_SellingRealEstate" ColumnName="ID_SellingRealEstate" />
+          <ScalarProperty Name="ID_Images" ColumnName="ID_Images" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_City">
+      <EntityTypeMapping TypeName="RealEstateModel.tbl_City">
+        <MappingFragment StoreEntitySet="tbl_City">
+          <ScalarProperty Name="ID_City" ColumnName="ID_City" />
+          <ScalarProperty Name="City_Name" ColumnName="City_Name" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_District">
+      <EntityTypeMapping TypeName="RealEstateModel.tbl_District">
+        <MappingFragment StoreEntitySet="tbl_District">
+          <ScalarProperty Name="ID_District" ColumnName="ID_District" />
+          <ScalarProperty Name="District_Name" ColumnName="District_Name" />
+          <ScalarProperty Name="ID_City" ColumnName="ID_City" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_FurnitureRentalDetail">
+      <EntityTypeMapping TypeName="RealEstateModel.tbl_FurnitureRentalDetail">
+        <MappingFragment StoreEntitySet="tbl_FurnitureRentalDetail">
+          <ScalarProperty Name="ID_FurnitureRentalDetail" ColumnName="ID_FurnitureRentalDetail" />
+          <ScalarProperty Name="ID_RealEstateRental" ColumnName="ID_RealEstateRental" />
+          <ScalarProperty Name="ID_CategoryOfFurniture" ColumnName="ID_CategoryOfFurniture" />
+          <ScalarProperty Name="NumberOfFurniture" ColumnName="NumberOfFurniture" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Images">
+      <EntityTypeMapping TypeName="RealEstateModel.tbl_Images">
+        <MappingFragment StoreEntitySet="tbl_Images">
+          <ScalarProperty Name="ID_Images" ColumnName="ID_Images" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Owner">
+      <EntityTypeMapping TypeName="RealEstateModel.tbl_Owner">
+        <MappingFragment StoreEntitySet="tbl_Owner">
+          <ScalarProperty Name="ID_Owner" ColumnName="ID_Owner" />
+          <ScalarProperty Name="Owner_Name" ColumnName="Owner_Name" />
+          <ScalarProperty Name="SEX" ColumnName="SEX" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Company_Name" ColumnName="Company_Name" />
+          <ScalarProperty Name="Describe" ColumnName="Describe" />
+          <ScalarProperty Name="Owner_Account" ColumnName="Owner_Account" />
+          <ScalarProperty Name="Owner_Password" ColumnName="Owner_Password" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Position">
+      <EntityTypeMapping TypeName="RealEstateModel.tbl_Position">
+        <MappingFragment StoreEntitySet="tbl_Position">
+          <ScalarProperty Name="ID_Position" ColumnName="ID_Position" />
+          <ScalarProperty Name="Position_Name" ColumnName="Position_Name" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_RealEstateRental">
+      <EntityTypeMapping TypeName="RealEstateModel.tbl_RealEstateRental">
+        <MappingFragment StoreEntitySet="tbl_RealEstateRental">
+          <ScalarProperty Name="ID_RealEstateRental" ColumnName="ID_RealEstateRental" />
+          <ScalarProperty Name="RealEstateRental_Code" ColumnName="RealEstateRental_Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID_Ward" ColumnName="ID_Ward" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="Acreage" ColumnName="Acreage" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Describe" ColumnName="Describe" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_RoomLeaseDetail">
+      <EntityTypeMapping TypeName="RealEstateModel.tbl_RoomLeaseDetail">
+        <MappingFragment StoreEntitySet="tbl_RoomLeaseDetail">
+          <ScalarProperty Name="ID_RoomLeaseDetail" ColumnName="ID_RoomLeaseDetail" />
+          <ScalarProperty Name="ID_RealEstateRental" ColumnName="ID_RealEstateRental" />
+          <ScalarProperty Name="ID_CategoryOfRoom" ColumnName="ID_CategoryOfRoom" />
+          <ScalarProperty Name="NumberOfRooms" ColumnName="NumberOfRooms" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_RoomSellDetail">
+      <EntityTypeMapping TypeName="RealEstateModel.tbl_RoomSellDetail">
+        <MappingFragment StoreEntitySet="tbl_RoomSellDetail">
+          <ScalarProperty Name="ID_RoomSellDetail" ColumnName="ID_RoomSellDetail" />
+          <ScalarProperty Name="ID_SellingRealEstate" ColumnName="ID_SellingRealEstate" />
+          <ScalarProperty Name="ID_CategoryOfRoom" ColumnName="ID_CategoryOfRoom" />
+          <ScalarProperty Name="NumberOfRooms" ColumnName="NumberOfRooms" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_SellFurnitureDetail">
+      <EntityTypeMapping TypeName="RealEstateModel.tbl_SellFurnitureDetail">
+        <MappingFragment StoreEntitySet="tbl_SellFurnitureDetail">
+          <ScalarProperty Name="ID_SellFurnitureDetail" ColumnName="ID_SellFurnitureDetail" />
+          <ScalarProperty Name="ID_SellingRealEstate" ColumnName="ID_SellingRealEstate" />
+          <ScalarProperty Name="ID_CategoryOfFurniture" ColumnName="ID_CategoryOfFurniture" />
+          <ScalarProperty Name="NumberOfFurniture" ColumnName="NumberOfFurniture" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_SellingRealEstate">
+      <EntityTypeMapping TypeName="RealEstateModel.tbl_SellingRealEstate">
+        <MappingFragment StoreEntitySet="tbl_SellingRealEstate">
+          <ScalarProperty Name="ID_SellingRealEstate" ColumnName="ID_SellingRealEstate" />
+          <ScalarProperty Name="SellingRealEstate_Code" ColumnName="SellingRealEstate_Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID_Ward" ColumnName="ID_Ward" />
+          <ScalarProperty Name="Acreage" ColumnName="Acreage" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Describe" ColumnName="Describe" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Ward">
+      <EntityTypeMapping TypeName="RealEstateModel.tbl_Ward">
+        <MappingFragment StoreEntitySet="tbl_Ward">
+          <ScalarProperty Name="ID_Ward" ColumnName="ID_Ward" />
+          <ScalarProperty Name="Ward_Name" ColumnName="Ward_Name" />
+          <ScalarProperty Name="ID_District" ColumnName="ID_District" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

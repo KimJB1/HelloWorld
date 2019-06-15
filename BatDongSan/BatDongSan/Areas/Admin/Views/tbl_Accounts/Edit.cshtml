@@ -1,0 +1,186 @@
+﻿@model BatDongSan.Models.tbl_Account
+
+@{
+    ViewBag.Title = "Cập nhật tài khoản";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<link href="~/Content/CreateEditDetail.css" rel="stylesheet" />
+<div class="modal-header">
+    <h2>Cập nhật tài khoản có mã: @Model.ID_Account</h2>
+</div>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+<div class="modal-body">
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.ID_Account)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Account_Name, htmlAttributes: new { @class = "control-label col-md-5" })
+            <div class="col-md-9">
+                @Html.EditorFor(model => model.Account_Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Account_Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Sex, htmlAttributes: new { @class = "control-label col-md-5" })
+            <div class="col-md-9">
+                @Html.DropDownListFor(model => model.Sex, new List<SelectListItem>()
+           {
+               new SelectListItem{Text="Nam",Value="1"},
+               new SelectListItem{Text="Nữ",Value="2"}
+           },"Chọn giới tính", htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Sex, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Birthday, htmlAttributes: new { @class = "control-label col-md-5" })
+            <div class="col-md-9">
+                @Html.EditorFor(model => model.Birthday, new { htmlAttributes = new { @class = "form-control", @Value = Model.Birthday.Value.ToString("yyyy-MM-dd") } })
+                @Html.ValidationMessageFor(model => model.Birthday, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-5" })
+            <div class="col-md-9">
+                @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-5" })
+            <div class="col-md-9">
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Phone, htmlAttributes: new { @class = "control-label col-md-5" })
+            <div class="col-md-9">
+                @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ID_Position, "Chức vụ", htmlAttributes: new { @class = "control-label col-md-5" })
+            <div class="col-md-9">
+                @Html.DropDownList("ID_Position", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ID_Position, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Account, htmlAttributes: new { @class = "control-label col-md-5" })
+            <div class="col-md-9">
+                @Html.EditorFor(model => model.Account, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Account, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Pass, htmlAttributes: new { @class = "control-label col-md-5" })
+            <div class="col-md-9">
+                @Html.EditorFor(model => model.Pass, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Pass, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CreateBy, htmlAttributes: new { @class = "control-label col-md-5" })
+            <div class="col-md-9">
+                @Html.EditorFor(model => model.CreateBy, new { htmlAttributes = new { @class = "form-control" , @Readonly= "true" } })
+                @Html.ValidationMessageFor(model => model.CreateBy, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.UpdateBy, htmlAttributes: new { @class = "control-label col-md-5" })
+            <div class="col-md-9">
+                @Html.EditorFor(model => model.UpdateBy, new { htmlAttributes = new { @class = "form-control" , @Readonly = "true" } })
+                @Html.ValidationMessageFor(model => model.UpdateBy, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CreateDate, htmlAttributes: new { @class = "control-label col-md-5" })
+            <div class="col-md-9">
+                @Html.EditorFor(model => model.CreateDate, new { htmlAttributes = new { @class = "form-control", @Readonly="true" } })
+                @Html.ValidationMessageFor(model => model.CreateDate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.UpdateDate, htmlAttributes: new { @class = "control-label col-md-5" })
+            <div class="col-md-9">
+                @Html.EditorFor(model => model.UpdateDate, new { htmlAttributes = new { @placeholder=DateTime.Now, @class = "form-control", @Readonly="true" } })
+                @Html.ValidationMessageFor(model => model.UpdateDate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label col-md-5" })
+            <div class="col-md-9">
+                @Html.DropDownListFor(model => model.Status, new List<SelectListItem>()
+           {
+               new SelectListItem{Text="Đang làm", Value="1"},
+               new SelectListItem{Text="Nghỉ phép", Value="2"},
+               new SelectListItem{Text="Đã nghỉ hẳn", Value="3"}
+           },"Chọn trạng thái", htmlAttributes: new { @class = "form-control"})
+                @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Avarta, htmlAttributes: new { @class = "control-label col-md-3" })
+            <div class="col-md-9">
+                @Html.EditorFor(model => model.Avarta, new { htmlAttributes = new { @class = "form-control" ,@Readonly="true" } })
+                @Html.ValidationMessageFor(model => model.Avarta, "", new { @class = "text-danger" })
+                <div class="col-md-3">
+                    <button type="button" id="SelectImg" class="btn btn-default">Chọn ảnh</button>
+                </div>
+                <div class="col-md-9">
+                    <img src="@Model.Avarta" id="showImg" class="ShowImg" />
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-9">
+                <input type="submit" value="Lưu" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+</div>
+}
+
+<div class="modal-footer">
+    <button type="button" onclick="comeback()" class="btn btn-clipboard"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+</div>
+@section Scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#SelectImg").click(function () {
+                var finder = new CKFinder();
+                finder.selectActionFunction = function (fileUrl) {
+                    $("#Avarta").val(fileUrl);
+                    $("#showImg").attr("src", fileUrl);
+                };
+                finder.popup();
+            });
+        })
+    </script>
+    }
+<script>
+    function comeback() {
+        window.location.href = "/Admin/tbl_Accounts/Index";
+    }
+</script>

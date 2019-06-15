@@ -1,0 +1,7 @@
+﻿
+.pagination > .active > a {
+    color: white !important;
+}
+.bg-gradient-primary {
+    background-image: linear-gradient(180deg,#c51407 10%,#795548 100%);
+}

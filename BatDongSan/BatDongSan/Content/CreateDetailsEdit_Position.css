@@ -1,0 +1,18 @@
+﻿.modal-header{
+    color:green;
+    font-weight:bold;
+}
+.modal-header:hover{
+    color:lawngreen;
+}
+.form-control {
+    margin: -36px 0px 0px 124px;
+}
+.btn-clipboard{
+    color:white;
+    background-color:red;
+}
+.btn-clipboard:hover{
+    color:red;
+    background-color:#f39797;
+}

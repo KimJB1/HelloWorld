@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3ff4a8d7b8544952950f91afcbcb2980" Name="Diagram1">
+        <EntityTypeShape EntityType="RealEstateModel.tbl_Account" Width="1.5" PointX="3" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealEstateModel.tbl_CategoryOfFurniture" Width="1.5" PointX="10.5" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealEstateModel.tbl_CategoryOfImagesRental" Width="1.5" PointX="9.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealEstateModel.tbl_CategoryOfRoom" Width="1.5" PointX="7.5" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealEstateModel.tbl_CategoryOfSellImages" Width="1.5" PointX="9.75" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealEstateModel.tbl_City" Width="1.5" PointX="0.75" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealEstateModel.tbl_District" Width="1.5" PointX="3" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealEstateModel.tbl_FurnitureRentalDetail" Width="1.5" PointX="12.75" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealEstateModel.tbl_Images" Width="1.5" PointX="7.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealEstateModel.tbl_Owner" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealEstateModel.tbl_Position" Width="1.5" PointX="0.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealEstateModel.tbl_RealEstateRental" Width="1.5" PointX="7.5" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealEstateModel.tbl_RoomLeaseDetail" Width="1.5" PointX="9.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealEstateModel.tbl_RoomSellDetail" Width="1.5" PointX="12.75" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealEstateModel.tbl_SellFurnitureDetail" Width="1.5" PointX="9.75" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealEstateModel.tbl_SellingRealEstate" Width="1.5" PointX="7.5" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealEstateModel.tbl_Ward" Width="1.5" PointX="5.25" PointY="12.125" IsExpanded="true" />
+        <AssociationConnector Association="RealEstateModel.FK__tbl_Accou__ID_Po__1273C1CD" ManuallyRouted="false" />
+        <AssociationConnector Association="RealEstateModel.FK__tbl_Furni__ID_Ca__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="RealEstateModel.FK__tbl_SellF__ID_Ca__300424B4" ManuallyRouted="false" />
+        <AssociationConnector Association="RealEstateModel.FK__tbl_Categ__ID_Im__37A5467C" ManuallyRouted="false" />
+        <AssociationConnector Association="RealEstateModel.FK__tbl_Categ__ID_Re__36B12243" ManuallyRouted="false" />
+        <AssociationConnector Association="RealEstateModel.FK__tbl_RoomL__ID_Ca__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="RealEstateModel.FK__tbl_RoomS__ID_Ca__2A4B4B5E" ManuallyRouted="false" />
+        <AssociationConnector Association="RealEstateModel.FK__tbl_Categ__ID_Im__24927208" ManuallyRouted="false" />
+        <AssociationConnector Association="RealEstateModel.FK__tbl_Categ__ID_Se__239E4DCF" ManuallyRouted="false" />
+        <AssociationConnector Association="RealEstateModel.FK__tbl_Distr__ID_Ci__173876EA" ManuallyRouted="false" />
+        <AssociationConnector Association="RealEstateModel.FK__tbl_Ward__ID_Dis__1A14E395" ManuallyRouted="false" />
+        <AssociationConnector Association="RealEstateModel.FK__tbl_Furni__ID_Re__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="RealEstateModel.FK__tbl_RealE__ID_Wa__33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="RealEstateModel.FK__tbl_RoomL__ID_Re__3A81B327" ManuallyRouted="false" />
+        <AssociationConnector Association="RealEstateModel.FK__tbl_RoomS__ID_Se__29572725" ManuallyRouted="false" />
+        <AssociationConnector Association="RealEstateModel.FK__tbl_SellF__ID_Se__2F10007B" ManuallyRouted="false" />
+        <AssociationConnector Association="RealEstateModel.FK__tbl_Selli__ID_Wa__1ED998B2" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

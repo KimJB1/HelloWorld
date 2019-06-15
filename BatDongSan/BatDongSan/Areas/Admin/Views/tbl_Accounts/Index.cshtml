@@ -1,0 +1,94 @@
+﻿@model IEnumerable<BatDongSan.Models.tbl_Account>
+
+@{
+    ViewBag.Title = "Danh sách tài khoản";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<link href="~/Content/TaiKhoan.css" rel="stylesheet" />
+<div class="modal-header">
+    <h2>Danh sách tài khoản</h2>
+
+    <p>
+        <button onclick="CreateAccount()" class="btn btn-default" style="cursor:pointer"><i class="fa fa-plus" aria-hidden="true"></i></button>
+    </p>
+</div>
+<table class="table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Avarta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Account_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Account)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tbl_Position.Position_Name)
+        </th>
+        <th>Tác vụ</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <img src="@item.Avarta" class="image" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Account_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Account)
+        </td>
+        <td>
+            @if (item.Status == 1)
+            {
+                <text>Đang làm</text>;
+            }
+            else
+            {
+                if (item.Status == 2)
+                {
+                    <text>Nghỉ phép</text>;
+                }
+                else
+                {
+                    if (item.Status == 3)
+                    {
+                        <text>Đã nghỉ hẳn</text>;
+                    }
+                }
+            }
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbl_Position.Position_Name)
+        </td>
+        <td>
+            <button type="button" onclick="EditAccount(@item.ID_Account)" class="btn btn-default"><i class="fa fa-magic" aria-hidden="true"></i></button> 
+            <button type="button" onclick="DetailsAccount(@item.ID_Account)" class="btn btn-primary"><i class="fa fa-info" aria-hidden="true"></i></button> 
+            <button type="button" onclick="DeleteAccount(@item.ID_Account)" class="btn btn-google"><i class="fa fa-trash" aria-hidden="true"></i></button>
+        </td>
+    </tr>
+}
+
+</table>
+<script>
+    function CreateAccount() {
+        window.location.href = "/Admin/tbl_Accounts/Create";
+    }
+    function EditAccount(MTK) {
+        window.location.href = "/Admin/tbl_Accounts/Edit/" + MTK;
+    }
+    function DetailsAccount(IDTK) {
+        window.location.href = "/Admin/tbl_Accounts/Details/" + IDTK;
+    }
+    function DeleteAccount(IDTK) {
+        var f = confirm("Bạn muốn xóa tài khoản có mã " + IDTK + " phải không?");
+        if (f == true) {
+            window.location.href = "/Admin/tbl_Accounts/Deletee/" + IDTK;
+        }
+    }
+</script>

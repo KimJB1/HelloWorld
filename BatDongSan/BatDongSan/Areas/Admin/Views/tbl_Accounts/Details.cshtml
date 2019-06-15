@@ -1,0 +1,116 @@
+﻿@model BatDongSan.Models.tbl_Account
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<link href="~/Content/CreateEditDetail.css" rel="stylesheet" />
+<div class="modal-header">
+    <h2>Thông tin tài khoản có <b>ID: @Model.ID_Account</b></h2>
+</div>
+
+<div class="modal-body">
+    <div class="form-horizontal">
+        <div class="flLeft">
+            <img src="@Model.Avarta" class="Imagess" />
+        </div>
+        <table class="tableRight">
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Account_Name)</th>
+                <td>@Html.DisplayFor(model => model.Account_Name)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.tbl_Position.Position_Name)</th>
+                <td>@Html.DisplayFor(model => model.tbl_Position.Position_Name)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Sex)</th>
+                <td>
+                    @if (Model.Sex == 1)
+                    {
+                        <text>Nam</text>
+                    }
+                    else
+                    {
+                        <text>Nữ</text>
+                    }
+            </td>
+        </tr>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Birthday)</th>
+            <td>@Html.DisplayFor(model => model.Birthday)</td>
+        </tr>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Address)</th>
+            <td>@Html.DisplayFor(model => model.Address)</td>
+        </tr>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Email)</th>
+            <td>@Html.DisplayFor(model => model.Email)</td>
+        </tr>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Phone)</th>
+            <td>@Html.DisplayFor(model => model.Phone)</td>
+        </tr>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Account)</th>
+            <td>@Html.DisplayFor(model => model.Account)</td>
+        </tr>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Pass)</th>
+            <td>@Html.DisplayFor(model => model.Pass)</td>
+        </tr>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.CreateBy)</th>
+            <td>@Html.DisplayFor(model => model.CreateBy)</td>
+        </tr>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.UpdateBy)</th>
+            <td>@Html.DisplayFor(model => model.UpdateBy)</td>
+        </tr>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.CreateDate)</th>
+            <td>@Html.DisplayFor(model => model.CreateDate)</td>
+        </tr>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.UpdateDate)</th>
+            <td>@Html.DisplayFor(model => model.UpdateDate)</td>
+        </tr>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Status)</th>
+            <td>
+                @if (Model.Status == 1)
+                {
+                    <text>Đang làm</text>;
+                }
+                else
+                {
+                    if (Model.Status == 2)
+                    {
+                        <text>Nghỉ phép</text>;
+                    }
+                    else
+                    {
+                        if (Model.Status == 3)
+                        {
+                            <text>Đã nghỉ hẳn</text>
+                        }
+                    }
+                }
+            </td>
+        </tr>
+        </table>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" onclick="EditAccount(@Model.ID_Account)" class="btn btn-primary"><i class="fa fa-magic" aria-hidden="true"></i></button>
+    <button type="button" onclick="comeback()" class="btn btn-clipboard"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+</div>
+<script>
+    function EditAccount(IDTK) {
+        window.location.href = "/Admin/tbl_Accounts/Edit/" + IDTK;
+    }
+    function comeback() {
+        window.location.href = "/Admin/tbl_Accounts/Index";
+    }
+</script>

@@ -1,0 +1,58 @@
+﻿.form-group{
+    float:left;
+    width:50%;
+}
+.modal-header{
+    color:forestgreen;
+}
+.modal-header:hover{
+    color:springgreen;
+}
+.form-group:last-child{
+    clear:both;
+}
+.modal-footer{
+    clear:both;
+}
+.form-control {
+    margin: -36px 125px 10px;
+}
+.btn-clipboard {
+    color: white;
+    background-color: #ff0000;
+}
+    .btn-clipboard:hover {
+        color: red;
+        background-color: #f68989;
+    }
+.btn-default {
+    background-color: green;
+    color: white;
+    margin: -74px 0px 0px 540px;
+}
+.btn-default:hover{
+    background-color:#7bca7b;
+    color:green;
+}
+.ShowImg {
+    width: 200px;
+    margin: -15px 0px 0px 126px;
+    border: 1px solid #ff0000;
+}
+.Imagess{
+    width:200px;
+    box-shadow: 2px 2px 10px gray, 2px -2px 10px gray, -2px 2px 10px gray, -2px -2px 10px gray;
+    opacity:0.9;
+}
+.flLeft{
+    float:left;
+    width:200px;
+    margin-right: 30px;
+}
+.Imagess:hover {
+    opacity: 1;
+}
+.tableRight{
+    float: left;
+    width: 400px;
+}

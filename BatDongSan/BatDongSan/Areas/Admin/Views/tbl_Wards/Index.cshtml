@@ -1,0 +1,85 @@
+﻿@model IEnumerable<BatDongSan.Models.tbl_Ward>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<link href="~/Content/TaiKhoan.css" rel="stylesheet" />
+<div class="modal-header">
+    <h2>Danh sách xã/phường</h2>
+
+    <p>
+        <button onclick="CreateXP()" class="btn btn-default" style="cursor:pointer"><i class="fa fa-plus" aria-hidden="true"></i></button>
+    </p>
+</div>
+<table class="table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Ward_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreateBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UpdateBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreateDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UpdateDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tbl_District.District_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>Tác vụ</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ward_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreateBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UpdateBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreateDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UpdateDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbl_District.District_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            <button type="button" onclick="EditXP(@item.ID_Ward)" class="btn btn-default"><i class="fa fa-magic" aria-hidden="true"></i></button>
+            <button type="button" onclick="DeleteXP(@item.ID_Ward)" class="btn btn-google"><i class="fa fa-trash" aria-hidden="true"></i></button>
+        </td>
+    </tr>
+}
+
+</table>
+<script>
+    function CreateXP() {
+        window.location.href = "/Admin/tbl_Wards/Create";
+    }
+    function EditXP(MXP) {
+        window.location.href = "/Admin/tbl_Wards/Edit/" + MXP;
+    }
+    function DeleteXP(MXP) {
+        var f = confirm("Bạn muốn xóa xã/phường có mã: " + MXP + " phải không?");
+        if (f == true) {
+            window.location.href = "/Admin/tbl_Wards/DeleteXP/" + MXP;
+        }
+    }
+</script>

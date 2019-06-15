@@ -1,0 +1,102 @@
+﻿@model IEnumerable<BatDongSan.Models.tbl_District>
+
+@{
+    ViewBag.Title = "Quận/huyện";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<link href="~/Content/TaiKhoan.css" rel="stylesheet" />
+<div class="modal-header">
+    <h2>Danh sách quận/huyện</h2>
+
+    <p>
+        <button onclick="CreateQH()" class="btn btn-default" style="cursor:pointer"><i class="fa fa-plus" aria-hidden="true"></i></button>
+    </p>
+</div>
+<table class="table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.District_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreateBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UpdateBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreateDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UpdateDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tbl_City.City_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>Tác vụ</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.District_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreateBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UpdateBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreateDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UpdateDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbl_City.City_Name)
+        </td>
+        <td>
+            @if (item.Status == 1)
+            {
+                <text>Hoạt động</text>;
+            }
+            else
+            {
+                if (item.Status == 2)
+                {
+                    <text>Đang xây dựng</text>;
+                }
+                else
+                {
+                    if (item.Status == 3)
+                    {
+                        <text>Ngừng hoạt động</text>;
+                    }
+                }
+            }
+        </td>
+        <td>
+            <button type="button" onclick="EditQH(@item.ID_District)" class="btn btn-default"><i class="fa fa-magic" aria-hidden="true"></i></button>
+            <button type="button" onclick="DeleteQH(@item.ID_District)" class="btn btn-google"><i class="fa fa-trash" aria-hidden="true"></i></button>
+        </td>
+    </tr>
+}
+
+</table>
+<script>
+    function CreateQH() {
+        window.location.href = "/Admin/tbl_Districts/Create";
+    }
+    function EditQH(MQH) {
+        window.location.href = "/Admin/tbl_Districts/Edit/" + MQH;
+    }
+    function DeleteQH(MQH) {
+        var f = confirm("Bạn muốn xóa quận/huyện có mã: " + MQH + " phải không?");
+        if (f == true) {
+            window.location.href = "/Admin/tbl_Districts/DeleteQH/" + MQH;
+        }
+    }
+</script>

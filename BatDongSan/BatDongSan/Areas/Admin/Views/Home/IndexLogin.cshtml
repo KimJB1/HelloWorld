@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "IndexLogin";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutLoginAdmin.cshtml";
+}
+
+<div class="loginmain">
+    <h3>Welcome to VietDung Real Estate</h3>
+    <div class="imgs">
+        <i class="fa fa-user-circle"></i><br>
+        <b>Admin</b>
+        <br>
+    </div>
+    <div class="loginbot">
+        <input type="text" placeholder="Nhập Email của bạn" class="btn btn-default"><br />
+        <input type="password" placeholder="********" class="btn btn-default"><br />
+        <input type="submit" onclick="ComeBack()" value="Quay lại" class="btn btn-default" style="text-align: center !important; float:left;width:29%;margin-left:20%; color:white;background-color:red;margin-right:2%;">
+        <input type="submit" value="Đăng nhập" class="btn btn-primary" style="text-align: center !important; float:left;width:29%;">
+    </div>
+</div>
+<script>
+    function ComeBack() {
+        var f = confirm("Xác nhận quay lại trang?");
+        if (f == true) {
+            window.location.href = "/Admin/Home/IndexHome";
+        }
+    }
+</script>
+

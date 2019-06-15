@@ -1,0 +1,97 @@
+﻿@model IEnumerable<BatDongSan.Models.tbl_Position>
+
+@{
+    ViewBag.Title = "Chức vụ";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<link href="~/Content/TaiKhoan.css" rel="stylesheet" />
+<div class="modal-header">
+    <h2>Danh sách chức vụ</h2>
+
+    <p>
+        <button onclick="CreateCV()" class="btn btn-default" style="cursor:pointer"><i class="fa fa-plus" aria-hidden="true"></i></button>
+    </p>
+</div>
+<table class="table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Position_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreateBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UpdateBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreateDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UpdateDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>Tác vụ</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Position_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreateBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UpdateBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreateDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UpdateDate)
+            </td>
+            <td>
+                @if (item.Status == 1)
+                {
+                    <text>Hoạt động</text>;
+                }
+                else
+                {
+                    if (item.Status == 2)
+                    {
+                        <text>Đang đề xuất</text>;
+                    }
+                    else
+                    {
+                        if(item.Status == 3)
+                        {
+                            <text>Ngừng hoạt động</text>;
+                        }
+                    }
+                }
+            </td>
+            <td>
+                <button type="button" onclick="EditCV(@item.ID_Position)" class="btn btn-default"><i class="fa fa-magic" aria-hidden="true"></i></button>
+                <button type="button" onclick="DeleteCV(@item.ID_Position)" class="btn btn-google"><i class="fa fa-trash" aria-hidden="true"></i></button>
+            </td>
+        </tr>
+    }
+
+</table>
+<script>
+    function CreateCV() {
+        window.location.href = "/Admin/tbl_Positions/Create";
+    }
+    function EditCV(IDCV) {
+        window.location.href = "/Admin/tbl_Positions/Edit/" + IDCV;
+    }
+    function DeleteCV(MCV) {
+        var f = confirm("Bạn muốn xóa chức vụ có mã: " + MCV + " phải không?");
+        if (f == true) {
+            window.location.href = "/Admin/tbl_Positions/DeleteCV/" + MCV;
+        }
+    }
+</script>

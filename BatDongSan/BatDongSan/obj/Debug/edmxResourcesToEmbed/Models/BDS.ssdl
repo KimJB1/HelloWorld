@@ -1,0 +1,539 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RealEstateModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tbl_Account">
+    <Key>
+      <PropertyRef Name="ID_Account" />
+    </Key>
+    <Property Name="ID_Account" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Account_Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Sex" Type="int" />
+    <Property Name="Birthday" Type="datetime" />
+    <Property Name="Address" Type="nvarchar" MaxLength="200" />
+    <Property Name="Email" Type="varchar" MaxLength="200" />
+    <Property Name="Phone" Type="varchar" MaxLength="10" />
+    <Property Name="ID_Position" Type="int" />
+    <Property Name="Account" Type="varchar" MaxLength="50" />
+    <Property Name="Pass" Type="varchar" MaxLength="10" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="50" />
+    <Property Name="UpdateBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="Status" Type="int" />
+    <Property Name="Avarta" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="tbl_CategoryOfFurniture">
+    <Key>
+      <PropertyRef Name="ID_CategoryOfFurniture" />
+    </Key>
+    <Property Name="ID_CategoryOfFurniture" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="100" />
+    <Property Name="UpdateBy" Type="varchar" MaxLength="100" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="Status" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="tbl_CategoryOfImagesRental">
+    <Key>
+      <PropertyRef Name="ID_CategoryOfImageRental" />
+    </Key>
+    <Property Name="ID_CategoryOfImageRental" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_RealEstateRental" Type="int" />
+    <Property Name="ID_Images" Type="int" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="100" />
+    <Property Name="UpdateBy" Type="varchar" MaxLength="100" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="Status" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="tbl_CategoryOfRoom">
+    <Key>
+      <PropertyRef Name="ID_CategoryOfRoom" />
+    </Key>
+    <Property Name="ID_CategoryOfRoom" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryOfRoomName" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="100" />
+    <Property Name="UpdateBy" Type="varchar" MaxLength="100" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="Status" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="tbl_CategoryOfSellImages">
+    <Key>
+      <PropertyRef Name="ID_CategoryOfSellImages" />
+    </Key>
+    <Property Name="ID_CategoryOfSellImages" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_SellingRealEstate" Type="int" />
+    <Property Name="ID_Images" Type="int" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="100" />
+    <Property Name="UpdateBy" Type="varchar" MaxLength="100" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="Status" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="tbl_City">
+    <Key>
+      <PropertyRef Name="ID_City" />
+    </Key>
+    <Property Name="ID_City" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="City_Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="50" />
+    <Property Name="UpdateBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="Status" Type="int" />
+  </EntityType>
+  <EntityType Name="tbl_District">
+    <Key>
+      <PropertyRef Name="ID_District" />
+    </Key>
+    <Property Name="ID_District" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="District_Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="ID_City" Type="int" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="50" />
+    <Property Name="UpdateBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="Status" Type="int" />
+  </EntityType>
+  <EntityType Name="tbl_FurnitureRentalDetail">
+    <Key>
+      <PropertyRef Name="ID_FurnitureRentalDetail" />
+    </Key>
+    <Property Name="ID_FurnitureRentalDetail" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_RealEstateRental" Type="int" />
+    <Property Name="ID_CategoryOfFurniture" Type="int" />
+    <Property Name="NumberOfFurniture" Type="int" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="100" />
+    <Property Name="UpdateBy" Type="varchar" MaxLength="100" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="Status" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="tbl_Images">
+    <Key>
+      <PropertyRef Name="ID_Images" />
+    </Key>
+    <Property Name="ID_Images" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Link" Type="nvarchar(max)" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="100" />
+    <Property Name="UpdateBy" Type="varchar" MaxLength="100" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="Status" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="tbl_Owner">
+    <Key>
+      <PropertyRef Name="ID_Owner" />
+    </Key>
+    <Property Name="ID_Owner" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Owner_Name" Type="nvarchar" MaxLength="250" />
+    <Property Name="SEX" Type="tinyint" />
+    <Property Name="Address" Type="nvarchar" MaxLength="200" />
+    <Property Name="Phone" Type="varchar" MaxLength="10" />
+    <Property Name="Email" Type="varchar" MaxLength="200" />
+    <Property Name="Company_Name" Type="nvarchar" MaxLength="200" />
+    <Property Name="Describe" Type="ntext" />
+    <Property Name="Owner_Account" Type="varchar" MaxLength="100" />
+    <Property Name="Owner_Password" Type="varchar" MaxLength="10" />
+    <Property Name="Status" Type="int" />
+  </EntityType>
+  <EntityType Name="tbl_Position">
+    <Key>
+      <PropertyRef Name="ID_Position" />
+    </Key>
+    <Property Name="ID_Position" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Position_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="50" />
+    <Property Name="UpdateBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="Status" Type="int" />
+  </EntityType>
+  <EntityType Name="tbl_RealEstateRental">
+    <Key>
+      <PropertyRef Name="ID_RealEstateRental" />
+    </Key>
+    <Property Name="ID_RealEstateRental" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RealEstateRental_Code" Type="varchar" MaxLength="10" />
+    <Property Name="Name" Type="nvarchar" MaxLength="250" />
+    <Property Name="ID_Ward" Type="int" />
+    <Property Name="StartTime" Type="datetime" />
+    <Property Name="EndTime" Type="datetime" />
+    <Property Name="Acreage" Type="int" />
+    <Property Name="UnitPrice" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Unit" Type="int" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="100" />
+    <Property Name="UpdateBy" Type="varchar" MaxLength="100" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="Status" Type="tinyint" />
+    <Property Name="Image" Type="nvarchar(max)" />
+    <Property Name="Describe" Type="ntext" />
+  </EntityType>
+  <EntityType Name="tbl_RoomLeaseDetail">
+    <Key>
+      <PropertyRef Name="ID_RoomLeaseDetail" />
+    </Key>
+    <Property Name="ID_RoomLeaseDetail" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_RealEstateRental" Type="int" />
+    <Property Name="ID_CategoryOfRoom" Type="int" />
+    <Property Name="NumberOfRooms" Type="int" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="100" />
+    <Property Name="UpdateBy" Type="varchar" MaxLength="100" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="Status" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="tbl_RoomSellDetail">
+    <Key>
+      <PropertyRef Name="ID_RoomSellDetail" />
+    </Key>
+    <Property Name="ID_RoomSellDetail" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_SellingRealEstate" Type="int" />
+    <Property Name="ID_CategoryOfRoom" Type="int" />
+    <Property Name="NumberOfRooms" Type="int" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="100" />
+    <Property Name="UpdateBy" Type="varchar" MaxLength="100" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="Status" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="tbl_SellFurnitureDetail">
+    <Key>
+      <PropertyRef Name="ID_SellFurnitureDetail" />
+    </Key>
+    <Property Name="ID_SellFurnitureDetail" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_SellingRealEstate" Type="int" />
+    <Property Name="ID_CategoryOfFurniture" Type="int" />
+    <Property Name="NumberOfFurniture" Type="int" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="100" />
+    <Property Name="UpdateBy" Type="varchar" MaxLength="100" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="Status" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="tbl_SellingRealEstate">
+    <Key>
+      <PropertyRef Name="ID_SellingRealEstate" />
+    </Key>
+    <Property Name="ID_SellingRealEstate" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SellingRealEstate_Code" Type="varchar" MaxLength="10" />
+    <Property Name="Name" Type="nvarchar" MaxLength="250" />
+    <Property Name="ID_Ward" Type="int" />
+    <Property Name="Acreage" Type="int" />
+    <Property Name="UnitPrice" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Unit" Type="int" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="100" />
+    <Property Name="UpdateBy" Type="varchar" MaxLength="100" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="Status" Type="tinyint" />
+    <Property Name="Image" Type="nvarchar(max)" />
+    <Property Name="Describe" Type="ntext" />
+  </EntityType>
+  <EntityType Name="tbl_Ward">
+    <Key>
+      <PropertyRef Name="ID_Ward" />
+    </Key>
+    <Property Name="ID_Ward" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ward_Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="ID_District" Type="int" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="50" />
+    <Property Name="UpdateBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="Status" Type="int" />
+  </EntityType>
+  <Association Name="FK__tbl_Accou__ID_Po__1273C1CD">
+    <End Role="tbl_Position" Type="Self.tbl_Position" Multiplicity="0..1" />
+    <End Role="tbl_Account" Type="Self.tbl_Account" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Position">
+        <PropertyRef Name="ID_Position" />
+      </Principal>
+      <Dependent Role="tbl_Account">
+        <PropertyRef Name="ID_Position" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_Categ__ID_Im__24927208">
+    <End Role="tbl_Images" Type="Self.tbl_Images" Multiplicity="0..1" />
+    <End Role="tbl_CategoryOfSellImages" Type="Self.tbl_CategoryOfSellImages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Images">
+        <PropertyRef Name="ID_Images" />
+      </Principal>
+      <Dependent Role="tbl_CategoryOfSellImages">
+        <PropertyRef Name="ID_Images" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_Categ__ID_Im__37A5467C">
+    <End Role="tbl_Images" Type="Self.tbl_Images" Multiplicity="0..1" />
+    <End Role="tbl_CategoryOfImagesRental" Type="Self.tbl_CategoryOfImagesRental" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Images">
+        <PropertyRef Name="ID_Images" />
+      </Principal>
+      <Dependent Role="tbl_CategoryOfImagesRental">
+        <PropertyRef Name="ID_Images" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_Categ__ID_Re__36B12243">
+    <End Role="tbl_RealEstateRental" Type="Self.tbl_RealEstateRental" Multiplicity="0..1" />
+    <End Role="tbl_CategoryOfImagesRental" Type="Self.tbl_CategoryOfImagesRental" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_RealEstateRental">
+        <PropertyRef Name="ID_RealEstateRental" />
+      </Principal>
+      <Dependent Role="tbl_CategoryOfImagesRental">
+        <PropertyRef Name="ID_RealEstateRental" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_Categ__ID_Se__239E4DCF">
+    <End Role="tbl_SellingRealEstate" Type="Self.tbl_SellingRealEstate" Multiplicity="0..1" />
+    <End Role="tbl_CategoryOfSellImages" Type="Self.tbl_CategoryOfSellImages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_SellingRealEstate">
+        <PropertyRef Name="ID_SellingRealEstate" />
+      </Principal>
+      <Dependent Role="tbl_CategoryOfSellImages">
+        <PropertyRef Name="ID_SellingRealEstate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_Distr__ID_Ci__173876EA">
+    <End Role="tbl_City" Type="Self.tbl_City" Multiplicity="0..1" />
+    <End Role="tbl_District" Type="Self.tbl_District" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_City">
+        <PropertyRef Name="ID_City" />
+      </Principal>
+      <Dependent Role="tbl_District">
+        <PropertyRef Name="ID_City" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_Furni__ID_Ca__3F466844">
+    <End Role="tbl_CategoryOfFurniture" Type="Self.tbl_CategoryOfFurniture" Multiplicity="0..1" />
+    <End Role="tbl_FurnitureRentalDetail" Type="Self.tbl_FurnitureRentalDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_CategoryOfFurniture">
+        <PropertyRef Name="ID_CategoryOfFurniture" />
+      </Principal>
+      <Dependent Role="tbl_FurnitureRentalDetail">
+        <PropertyRef Name="ID_CategoryOfFurniture" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_Furni__ID_Re__3E52440B">
+    <End Role="tbl_RealEstateRental" Type="Self.tbl_RealEstateRental" Multiplicity="0..1" />
+    <End Role="tbl_FurnitureRentalDetail" Type="Self.tbl_FurnitureRentalDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_RealEstateRental">
+        <PropertyRef Name="ID_RealEstateRental" />
+      </Principal>
+      <Dependent Role="tbl_FurnitureRentalDetail">
+        <PropertyRef Name="ID_RealEstateRental" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_RealE__ID_Wa__33D4B598">
+    <End Role="tbl_Ward" Type="Self.tbl_Ward" Multiplicity="0..1" />
+    <End Role="tbl_RealEstateRental" Type="Self.tbl_RealEstateRental" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Ward">
+        <PropertyRef Name="ID_Ward" />
+      </Principal>
+      <Dependent Role="tbl_RealEstateRental">
+        <PropertyRef Name="ID_Ward" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_RoomL__ID_Ca__3B75D760">
+    <End Role="tbl_CategoryOfRoom" Type="Self.tbl_CategoryOfRoom" Multiplicity="0..1" />
+    <End Role="tbl_RoomLeaseDetail" Type="Self.tbl_RoomLeaseDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_CategoryOfRoom">
+        <PropertyRef Name="ID_CategoryOfRoom" />
+      </Principal>
+      <Dependent Role="tbl_RoomLeaseDetail">
+        <PropertyRef Name="ID_CategoryOfRoom" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_RoomL__ID_Re__3A81B327">
+    <End Role="tbl_RealEstateRental" Type="Self.tbl_RealEstateRental" Multiplicity="0..1" />
+    <End Role="tbl_RoomLeaseDetail" Type="Self.tbl_RoomLeaseDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_RealEstateRental">
+        <PropertyRef Name="ID_RealEstateRental" />
+      </Principal>
+      <Dependent Role="tbl_RoomLeaseDetail">
+        <PropertyRef Name="ID_RealEstateRental" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_RoomS__ID_Ca__2A4B4B5E">
+    <End Role="tbl_CategoryOfRoom" Type="Self.tbl_CategoryOfRoom" Multiplicity="0..1" />
+    <End Role="tbl_RoomSellDetail" Type="Self.tbl_RoomSellDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_CategoryOfRoom">
+        <PropertyRef Name="ID_CategoryOfRoom" />
+      </Principal>
+      <Dependent Role="tbl_RoomSellDetail">
+        <PropertyRef Name="ID_CategoryOfRoom" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_RoomS__ID_Se__29572725">
+    <End Role="tbl_SellingRealEstate" Type="Self.tbl_SellingRealEstate" Multiplicity="0..1" />
+    <End Role="tbl_RoomSellDetail" Type="Self.tbl_RoomSellDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_SellingRealEstate">
+        <PropertyRef Name="ID_SellingRealEstate" />
+      </Principal>
+      <Dependent Role="tbl_RoomSellDetail">
+        <PropertyRef Name="ID_SellingRealEstate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_SellF__ID_Ca__300424B4">
+    <End Role="tbl_CategoryOfFurniture" Type="Self.tbl_CategoryOfFurniture" Multiplicity="0..1" />
+    <End Role="tbl_SellFurnitureDetail" Type="Self.tbl_SellFurnitureDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_CategoryOfFurniture">
+        <PropertyRef Name="ID_CategoryOfFurniture" />
+      </Principal>
+      <Dependent Role="tbl_SellFurnitureDetail">
+        <PropertyRef Name="ID_CategoryOfFurniture" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_SellF__ID_Se__2F10007B">
+    <End Role="tbl_SellingRealEstate" Type="Self.tbl_SellingRealEstate" Multiplicity="0..1" />
+    <End Role="tbl_SellFurnitureDetail" Type="Self.tbl_SellFurnitureDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_SellingRealEstate">
+        <PropertyRef Name="ID_SellingRealEstate" />
+      </Principal>
+      <Dependent Role="tbl_SellFurnitureDetail">
+        <PropertyRef Name="ID_SellingRealEstate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_Selli__ID_Wa__1ED998B2">
+    <End Role="tbl_Ward" Type="Self.tbl_Ward" Multiplicity="0..1" />
+    <End Role="tbl_SellingRealEstate" Type="Self.tbl_SellingRealEstate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Ward">
+        <PropertyRef Name="ID_Ward" />
+      </Principal>
+      <Dependent Role="tbl_SellingRealEstate">
+        <PropertyRef Name="ID_Ward" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_Ward__ID_Dis__1A14E395">
+    <End Role="tbl_District" Type="Self.tbl_District" Multiplicity="0..1" />
+    <End Role="tbl_Ward" Type="Self.tbl_Ward" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_District">
+        <PropertyRef Name="ID_District" />
+      </Principal>
+      <Dependent Role="tbl_Ward">
+        <PropertyRef Name="ID_District" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="RealEstateModelStoreContainer">
+    <EntitySet Name="tbl_Account" EntityType="Self.tbl_Account" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_CategoryOfFurniture" EntityType="Self.tbl_CategoryOfFurniture" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_CategoryOfImagesRental" EntityType="Self.tbl_CategoryOfImagesRental" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_CategoryOfRoom" EntityType="Self.tbl_CategoryOfRoom" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_CategoryOfSellImages" EntityType="Self.tbl_CategoryOfSellImages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_City" EntityType="Self.tbl_City" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_District" EntityType="Self.tbl_District" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_FurnitureRentalDetail" EntityType="Self.tbl_FurnitureRentalDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Images" EntityType="Self.tbl_Images" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Owner" EntityType="Self.tbl_Owner" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Position" EntityType="Self.tbl_Position" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_RealEstateRental" EntityType="Self.tbl_RealEstateRental" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_RoomLeaseDetail" EntityType="Self.tbl_RoomLeaseDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_RoomSellDetail" EntityType="Self.tbl_RoomSellDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_SellFurnitureDetail" EntityType="Self.tbl_SellFurnitureDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_SellingRealEstate" EntityType="Self.tbl_SellingRealEstate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Ward" EntityType="Self.tbl_Ward" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__tbl_Accou__ID_Po__1273C1CD" Association="Self.FK__tbl_Accou__ID_Po__1273C1CD">
+      <End Role="tbl_Position" EntitySet="tbl_Position" />
+      <End Role="tbl_Account" EntitySet="tbl_Account" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_Categ__ID_Im__24927208" Association="Self.FK__tbl_Categ__ID_Im__24927208">
+      <End Role="tbl_Images" EntitySet="tbl_Images" />
+      <End Role="tbl_CategoryOfSellImages" EntitySet="tbl_CategoryOfSellImages" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_Categ__ID_Im__37A5467C" Association="Self.FK__tbl_Categ__ID_Im__37A5467C">
+      <End Role="tbl_Images" EntitySet="tbl_Images" />
+      <End Role="tbl_CategoryOfImagesRental" EntitySet="tbl_CategoryOfImagesRental" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_Categ__ID_Re__36B12243" Association="Self.FK__tbl_Categ__ID_Re__36B12243">
+      <End Role="tbl_RealEstateRental" EntitySet="tbl_RealEstateRental" />
+      <End Role="tbl_CategoryOfImagesRental" EntitySet="tbl_CategoryOfImagesRental" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_Categ__ID_Se__239E4DCF" Association="Self.FK__tbl_Categ__ID_Se__239E4DCF">
+      <End Role="tbl_SellingRealEstate" EntitySet="tbl_SellingRealEstate" />
+      <End Role="tbl_CategoryOfSellImages" EntitySet="tbl_CategoryOfSellImages" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_Distr__ID_Ci__173876EA" Association="Self.FK__tbl_Distr__ID_Ci__173876EA">
+      <End Role="tbl_City" EntitySet="tbl_City" />
+      <End Role="tbl_District" EntitySet="tbl_District" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_Furni__ID_Ca__3F466844" Association="Self.FK__tbl_Furni__ID_Ca__3F466844">
+      <End Role="tbl_CategoryOfFurniture" EntitySet="tbl_CategoryOfFurniture" />
+      <End Role="tbl_FurnitureRentalDetail" EntitySet="tbl_FurnitureRentalDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_Furni__ID_Re__3E52440B" Association="Self.FK__tbl_Furni__ID_Re__3E52440B">
+      <End Role="tbl_RealEstateRental" EntitySet="tbl_RealEstateRental" />
+      <End Role="tbl_FurnitureRentalDetail" EntitySet="tbl_FurnitureRentalDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_RealE__ID_Wa__33D4B598" Association="Self.FK__tbl_RealE__ID_Wa__33D4B598">
+      <End Role="tbl_Ward" EntitySet="tbl_Ward" />
+      <End Role="tbl_RealEstateRental" EntitySet="tbl_RealEstateRental" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_RoomL__ID_Ca__3B75D760" Association="Self.FK__tbl_RoomL__ID_Ca__3B75D760">
+      <End Role="tbl_CategoryOfRoom" EntitySet="tbl_CategoryOfRoom" />
+      <End Role="tbl_RoomLeaseDetail" EntitySet="tbl_RoomLeaseDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_RoomL__ID_Re__3A81B327" Association="Self.FK__tbl_RoomL__ID_Re__3A81B327">
+      <End Role="tbl_RealEstateRental" EntitySet="tbl_RealEstateRental" />
+      <End Role="tbl_RoomLeaseDetail" EntitySet="tbl_RoomLeaseDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_RoomS__ID_Ca__2A4B4B5E" Association="Self.FK__tbl_RoomS__ID_Ca__2A4B4B5E">
+      <End Role="tbl_CategoryOfRoom" EntitySet="tbl_CategoryOfRoom" />
+      <End Role="tbl_RoomSellDetail" EntitySet="tbl_RoomSellDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_RoomS__ID_Se__29572725" Association="Self.FK__tbl_RoomS__ID_Se__29572725">
+      <End Role="tbl_SellingRealEstate" EntitySet="tbl_SellingRealEstate" />
+      <End Role="tbl_RoomSellDetail" EntitySet="tbl_RoomSellDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_SellF__ID_Ca__300424B4" Association="Self.FK__tbl_SellF__ID_Ca__300424B4">
+      <End Role="tbl_CategoryOfFurniture" EntitySet="tbl_CategoryOfFurniture" />
+      <End Role="tbl_SellFurnitureDetail" EntitySet="tbl_SellFurnitureDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_SellF__ID_Se__2F10007B" Association="Self.FK__tbl_SellF__ID_Se__2F10007B">
+      <End Role="tbl_SellingRealEstate" EntitySet="tbl_SellingRealEstate" />
+      <End Role="tbl_SellFurnitureDetail" EntitySet="tbl_SellFurnitureDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_Selli__ID_Wa__1ED998B2" Association="Self.FK__tbl_Selli__ID_Wa__1ED998B2">
+      <End Role="tbl_Ward" EntitySet="tbl_Ward" />
+      <End Role="tbl_SellingRealEstate" EntitySet="tbl_SellingRealEstate" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_Ward__ID_Dis__1A14E395" Association="Self.FK__tbl_Ward__ID_Dis__1A14E395">
+      <End Role="tbl_District" EntitySet="tbl_District" />
+      <End Role="tbl_Ward" EntitySet="tbl_Ward" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

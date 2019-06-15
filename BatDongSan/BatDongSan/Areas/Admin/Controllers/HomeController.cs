@@ -11,6 +11,7 @@ namespace BatDongSan.Areas.Admin.Controllers
         // GET: Admin/Home
         public ActionResult IndexHome()
         {
+            var myName = "KIm JB";
             return View();
         }
         public ActionResult IndexLogin()
